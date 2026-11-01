@@ -69,26 +69,32 @@
       border-radius:24px; background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
     }
     .section-heading { margin:0 0 20px; text-align:center; font:500 23px 'Kanit',sans-serif; color:#f8d9eb; }
-    .tree { display:flex; justify-content:center; }
+    /* Sitemap: reset browser list defaults and build a clean, centered hierarchy. */
+    .tree { display:grid; place-items:center; width:100%; }
+    .tree ul { list-style:none !important; }
     .tree > ul {
-      width:min(520px,100%); margin:0; padding:20px 24px; list-style:none;
-      border:1px solid rgba(255,134,189,.2); border-radius:18px; background:rgba(16,8,22,.28);
+      display:block; width:min(560px,100%); margin:0 auto !important;
+      padding:22px 28px !important; border:1px solid rgba(255,134,189,.2);
+      border-radius:18px; background:rgba(16,8,22,.28);
     }
     .tree ul ul {
-      margin:10px 0 4px 12px; padding:4px 0 4px 20px;
-      border-left:1px solid rgba(255,134,189,.38); list-style:none;
+      display:block; margin:12px 0 4px 18px !important;
+      padding:5px 0 5px 22px !important;
+      border-left:1px solid rgba(255,134,189,.38);
     }
-    .tree li { position:relative; margin:9px 0; color:#e8d9eb; line-height:1.7; }
+    .tree li { position:relative; display:block; margin:10px 0 !important; padding:0; color:#e8d9eb; line-height:1.7; }
     .tree ul ul > li::before {
-      content:""; position:absolute; top:13px; left:-20px; width:12px;
+      content:""; position:absolute; top:15px; left:-23px; width:14px;
       border-top:1px solid rgba(255,134,189,.38);
     }
     .tree a {
-      display:inline-block; padding:5px 10px; border-radius:9px;
-      color:#eec9e1; transition:background .2s,color .2s;
+      display:inline-flex; align-items:center; min-height:36px; padding:6px 13px;
+      border:1px solid rgba(255,134,189,.16); border-radius:10px;
+      background:rgba(255,255,255,.035); color:#eec9e1;
+      transition:background .2s,color .2s,transform .2s;
     }
-    .tree a:hover { color:#fff; background:rgba(255,79,163,.13); }
-    .tree > ul > li > a { color:#ff9bc8; font-weight:600; }
+    .tree a:hover { color:#fff; background:rgba(255,79,163,.13); transform:translateX(3px); }
+    .tree > ul > li > a { color:#ff9bc8; font-weight:600; background:rgba(255,79,163,.09); }
     .lesson-footer {
       padding:22px 0 32px; border-top:1px solid var(--line);
       color:#8f7d95; text-align:center; font-size:10px;
@@ -103,7 +109,8 @@
       main { padding-top:34px; }
       .main-nav { gap:8px; }
       .main-nav a { min-width:0; flex:1 1 105px; padding:10px 12px; }
-      .tree > ul { padding:16px 12px; }
+      .tree > ul { padding:16px 14px !important; }
+      .tree ul ul { margin-left:10px !important; padding-left:18px !important; }
     }
   </style>
 </head>
