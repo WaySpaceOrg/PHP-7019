@@ -18,30 +18,65 @@ body > nav, main nav { justify-content:center; }
 body > p { line-height:1.9; }
 table { margin-left:auto !important; margin-right:auto !important; }
 @media(max-width:600px) { body { padding-left:14px; padding-right:14px; } body > * { max-width:100%; } body > img { max-width:100%; } }
+
+/* Page-specific centered layout: keep all lesson content in one balanced column. */
+body { display:block !important; padding:0 20px 45px; }
+body > * { width:auto; }
+.lesson-top { width:min(1040px,100%); margin:0 auto 34px; }
+.page-content { width:min(900px,100%); margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:22px; }
+.page-content > h1 { width:100%; margin:12px 0 4px; text-align:center; }
+.content-card { width:min(760px,100%); margin:0 auto; padding:clamp(20px,4vw,30px); text-align:center; border:1px solid var(--line); border-radius:22px; background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025)); box-shadow:0 16px 42px rgba(0,0,0,.16); }
+.content-card h2 { margin:0 0 16px; text-align:center; }
+.cat-section img { display:block; width:auto; max-width:100%; max-height:420px; margin:0 auto 14px; object-fit:contain; }
+.content-card p { margin:10px 0 0; text-align:center; }
+.traits-section ul { display:inline-block; margin:0 auto 16px; padding-left:24px; text-align:left; }
+.traits-section li { margin:7px 0; }
+.all-cats-link { display:table; margin:12px auto 0; padding:8px 18px; border:1px solid rgba(255,117,184,.35); border-radius:99px; background:rgba(255,79,163,.08); text-decoration:none; }
+.adoption-form { width:min(680px,100%); margin:0 auto; text-align:left; }
+.lesson-footer { width:min(1040px,100%); }
+@media(max-width:600px) {
+  body { padding:0 14px 35px; }
+  .lesson-top { margin-bottom:24px; }
+  .page-content { gap:16px; }
+  .content-card { padding:20px 16px; }
+}
+
 </style>
     <meta charset="UTF-8">
     <title>บ้านแมวเหมียว</title>
 </head>
-<body><header class="lesson-top"><a class="lesson-brand" href="../../index.html">PHP-7019<small>THE CREATIVE CODE SPACE</small></a><a class="back-btn" href="../../index.html">← กลับหน้าหลัก</a></header>
+<body>
+  <header class="lesson-top">
+    <a class="lesson-brand" href="../../index.html">PHP-7019<small>THE CREATIVE CODE SPACE</small></a>
+    <a class="back-btn" href="../../index.html">← กลับหน้าหลัก</a>
+  </header>
+
+  <main class="page-content">
     <h1>บ้านแมวเหมียว</h1>
 
-    <h2>แมวของเรา</h2>
-    <img src="cat.jpg" alt="รูปภาพแมวของเรา">
-    <p>แมวทุกตัวฉีดวัคซีนและทำหมันแล้ว</p>
+    <section class="content-card cat-section">
+      <h2>แมวของเรา</h2>
+      <img src="cat.jpg" alt="รูปภาพแมวของเรา">
+      <p>แมวทุกตัวฉีดวัคซีนและทำหมันแล้ว</p>
+    </section>
 
-    <h2>นิสัยของแมว</h2>
-    <ul>
+    <section class="content-card traits-section">
+      <h2>นิสัยของแมว</h2>
+      <ul>
         <li>ขี้อ้อน</li>
         <li>ชอบนอน</li>
         <li>กินเก่ง</li>
-    </ul>
+      </ul>
+      <a class="all-cats-link" href="cats.html">ดูแมวทั้งหมด</a>
+    </section>
 
-    <a href="cats.html">ดูแมวทั้งหมด</a>
-
-    <form action="adopt.php" method="post">
-        <label for="adopter">ชื่อผู้รับเลี้ยง</label>
-        <input type="text" id="adopter" name="adopter">
-        <button type="submit">ขอรับเลี้ยง</button>
+    <form class="adoption-form" action="adopt.php" method="post">
+      <label for="adopter">ชื่อผู้รับเลี้ยง</label>
+      <input type="text" id="adopter" name="adopter">
+      <button type="submit">ขอรับเลี้ยง</button>
     </form>
-<footer class="lesson-footer">© 2026 PHP-7019 · <a href="../../index.html">กลับหน้ารวมบทเรียน ↑</a></footer></body>
+  </main>
+
+  <footer class="lesson-footer">© 2026 PHP-7019 · <a href="../../index.html">กลับหน้ารวมบทเรียน ↑</a></footer>
+</body>
 </html>
