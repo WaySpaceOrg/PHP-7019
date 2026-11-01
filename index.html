@@ -10,14 +10,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script>
-    // Always reopen the homepage at the top when returning from a lesson page.
+    // Always show the homepage from the top after returning from another page.
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.addEventListener('pageshow', function (event) {
-      const navigation = performance.getEntriesByType('navigation')[0];
-      if (event.persisted || (navigation && navigation.type === 'back_forward')) {
-        if (window.location.hash) history.replaceState(null, '', window.location.pathname + window.location.search);
-        window.scrollTo(0, 0);
+    function resetHomeScroll() {
+      if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
       }
+      document.documentElement.style.scrollBehavior = 'auto';
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+    window.addEventListener('pageshow', function () {
+      resetHomeScroll();
+      requestAnimationFrame(resetHomeScroll);
     });
   </script>
   <style>
