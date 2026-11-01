@@ -1,60 +1,159 @@
 <!DOCTYPE html>
 <html lang="th">
-<head><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet"><style>:root{--pink:#ff58a7;--line:rgba(255,255,255,.13)}*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:0 20px 45px;color:#fff4fb;font-family:'Prompt','Kanit',sans-serif;background:radial-gradient(ellipse at 85% 5%,rgba(173,108,224,.18),transparent 34rem),radial-gradient(ellipse at 5% 20%,rgba(255,79,163,.14),transparent 28rem),#170d20;line-height:1.75}h1,h2,h3{font-family:'Kanit',sans-serif}h1{max-width:900px;margin:28px auto;color:#ff9bc8;font-size:clamp(28px,5vw,42px)}h2{color:#d5b7ff}p,li,label{color:#e5d7e8}a{color:#ff91c2}.lesson-top{max-width:1040px;margin:0 auto 35px;padding:20px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.lesson-brand{color:white;text-decoration:none;font-weight:700;letter-spacing:1px}.lesson-brand small{display:block;color:#b79ab8;font-size:9px;letter-spacing:2px;font-weight:400}.back-btn{padding:9px 16px;border:1px solid rgba(255,117,184,.42);border-radius:99px;background:rgba(255,79,163,.1);color:#ff9ac9;text-decoration:none;font-size:12px;font-weight:600}.lesson-footer{max-width:1040px;margin:48px auto 0;padding-top:18px;border-top:1px solid var(--line);text-align:center;color:#9d8ba4;font-size:11px}.lesson-footer a{color:#ff9ac9;text-decoration:none}table{width:min(900px,100%);margin:24px auto;border-collapse:collapse;background:#ffffff09;border:1px solid var(--line)}th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left}th{background:#ff58a72b;color:#ffc1dc}form,main>section{max-width:680px;margin:24px auto;padding:25px;border:1px solid var(--line);border-radius:22px;background:#ffffff0c}label{display:inline-block;margin:8px 8px 7px 0;font-size:13px}input:not([type=radio]):not([type=checkbox]),select,textarea{display:block;width:100%;margin:5px 0 15px;padding:12px 14px;border:1px solid #ffffff2a;border-radius:12px;background:#1b1023;color:white;font:inherit}input[type=radio],input[type=checkbox]{accent-color:#ff58a7}button{border:0;border-radius:99px;padding:12px 22px;background:linear-gradient(110deg,#ff58a7,#a978e8);color:white;font:600 13px 'Prompt',sans-serif;cursor:pointer}img{max-width:100%;height:auto;border-radius:18px}nav:not(.lesson-top){display:flex;flex-wrap:wrap;gap:10px;margin:16px auto;max-width:900px}nav:not(.lesson-top) a{padding:8px 14px;border:1px solid var(--line);border-radius:99px;background:#ffffff0b;text-decoration:none;font-size:12px}@media(max-width:600px){body{padding:0 14px 35px}.lesson-top{gap:10px}.back-btn{white-space:nowrap;padding:8px 12px}form{padding:18px}}
-/* Shared layout refinement: balanced, centered lesson content */
-body { display:flex; flex-direction:column; align-items:center; }
-body > * { width:min(900px,100%); margin-left:auto !important; margin-right:auto !important; }
-body > .lesson-top, body > .topbar, body > .lesson-footer, body > footer { width:100%; max-width:1040px; }
-body > main { width:min(900px,100%); margin:0 auto; }
-body > h1, body > h2, body > p { text-align:center; }
-body > img { display:block; width:auto; max-width:min(100%,720px); height:auto; margin:22px auto !important; object-fit:contain; }
-body > form, body > table { width:min(760px,100%); margin:26px auto !important; text-align:left; }
-body > ul { width:min(760px,100%); margin:18px auto !important; text-align:left; }
-body > main > h1, body > main > h2, body > main > p { text-align:center; margin-left:auto; margin-right:auto; }
-body > main > img, main img { display:block; width:auto; max-width:100%; height:auto; margin:22px auto !important; object-fit:contain; }
-body > main > section, main > section { width:100%; margin:26px auto; padding:clamp(18px,3vw,30px); border:1px solid var(--line); border-radius:22px; background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025)); }
-body > header:not(.lesson-top) { text-align:center; }
-body > nav, main nav { justify-content:center; }
-body > p { line-height:1.9; }
-table { margin-left:auto !important; margin-right:auto !important; }
-@media(max-width:600px) { body { padding-left:14px; padding-right:14px; } body > * { max-width:100%; } body > img { max-width:100%; } }
-</style>
-    <meta charset="UTF-8">
-    <title>ร้านกาแฟแมวเหมียว</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#170d20">
+  <meta name="description" content="แบบฝึกหัด HTML เรื่องโครงสร้างเว็บไซต์และ Site map — PHP-7019">
+  <title>Lesson 2 · Exercise 05 — ร้านกาแฟแมวเหมียว | PHP-7019</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#170d20; --panel:#211329; --pink:#ff4fa3; --rose:#ff86bd;
+      --violet:#b99aff; --text:#fff5fb; --muted:#b9a8bd; --line:rgba(255,255,255,.12);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      min-height:100vh; margin:0; color:var(--text); font-family:'Prompt',sans-serif;
+      background:radial-gradient(ellipse at 82% 8%,rgba(183,92,205,.2),transparent 32rem),
+                 radial-gradient(ellipse at 10% 28%,rgba(255,79,163,.14),transparent 28rem),var(--bg);
+    }
+    a { color:var(--rose); text-decoration:none; }
+    a:hover { color:#ffd0e5; }
+    .wrap { width:min(1000px,calc(100% - 40px)); margin-inline:auto; }
+    .lesson-top {
+      display:flex; align-items:center; justify-content:space-between; gap:18px;
+      padding:20px 0; border-bottom:1px solid var(--line);
+    }
+    .brand { display:flex; align-items:center; gap:12px; color:#fff; font-weight:700; letter-spacing:.8px; }
+    .brand-icon {
+      display:grid; place-items:center; width:42px; height:42px; border-radius:14px;
+      color:#fff; background:linear-gradient(135deg,var(--pink),#9c65dc);
+      box-shadow:0 8px 28px rgba(255,79,163,.22);
+    }
+    .brand small { display:block; color:#a990ad; font-size:9px; letter-spacing:2.2px; font-weight:400; }
+    .back-btn {
+      display:inline-flex; align-items:center; justify-content:center; padding:10px 16px;
+      border:1px solid rgba(255,134,189,.35); border-radius:99px;
+      color:#ff9bc8; background:rgba(255,79,163,.08); font-size:12px; white-space:nowrap;
+      transition:background .2s,transform .2s;
+    }
+    .back-btn:hover { transform:translateY(-2px); background:rgba(255,79,163,.16); }
+    main { padding:56px 0 30px; }
+    .hero {
+      padding:clamp(24px,5vw,46px); text-align:center; border:1px solid var(--line);
+      border-radius:26px; background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));
+      box-shadow:0 22px 65px rgba(0,0,0,.2);
+    }
+    .eyebrow { color:var(--rose); font-size:10px; font-weight:600; letter-spacing:3px; }
+    h1 { margin:12px 0 22px; color:var(--text); font:600 clamp(32px,5vw,48px)/1.25 'Kanit',sans-serif; }
+    h1 span { color:transparent; background:linear-gradient(95deg,#ff5da9,#c39aff 80%); -webkit-background-clip:text; background-clip:text; }
+    .main-nav { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin:0; padding:0; }
+    .main-nav a {
+      display:inline-flex; align-items:center; justify-content:center; min-width:112px;
+      padding:11px 18px; border:1px solid rgba(255,134,189,.25); border-radius:99px;
+      background:rgba(255,79,163,.075); color:#ffd0e5; font-size:13px;
+      transition:background .2s,transform .2s;
+    }
+    .main-nav a:hover { transform:translateY(-2px); background:rgba(255,79,163,.17); }
+    .intro-card {
+      margin-top:22px; padding:24px; text-align:center; border:1px solid var(--line);
+      border-radius:22px; background:rgba(255,255,255,.035);
+    }
+    .intro-card p { margin:0; color:#e8d9eb; font-size:15px; line-height:1.9; }
+    .sitemap-card {
+      margin:24px 0 58px; padding:clamp(22px,4vw,34px); border:1px solid var(--line);
+      border-radius:24px; background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+    }
+    .section-heading { margin:0 0 20px; text-align:center; font:500 23px 'Kanit',sans-serif; color:#f8d9eb; }
+    .tree { display:flex; justify-content:center; }
+    .tree > ul {
+      width:min(520px,100%); margin:0; padding:20px 24px; list-style:none;
+      border:1px solid rgba(255,134,189,.2); border-radius:18px; background:rgba(16,8,22,.28);
+    }
+    .tree ul ul {
+      margin:10px 0 4px 12px; padding:4px 0 4px 20px;
+      border-left:1px solid rgba(255,134,189,.38); list-style:none;
+    }
+    .tree li { position:relative; margin:9px 0; color:#e8d9eb; line-height:1.7; }
+    .tree ul ul > li::before {
+      content:""; position:absolute; top:13px; left:-20px; width:12px;
+      border-top:1px solid rgba(255,134,189,.38);
+    }
+    .tree a {
+      display:inline-block; padding:5px 10px; border-radius:9px;
+      color:#eec9e1; transition:background .2s,color .2s;
+    }
+    .tree a:hover { color:#fff; background:rgba(255,79,163,.13); }
+    .tree > ul > li > a { color:#ff9bc8; font-weight:600; }
+    .lesson-footer {
+      padding:22px 0 32px; border-top:1px solid var(--line);
+      color:#8f7d95; text-align:center; font-size:10px;
+    }
+    .lesson-footer a { color:#ff80b9; }
+    @media(max-width:600px) {
+      .wrap { width:calc(100% - 28px); }
+      .lesson-top { gap:10px; padding:15px 0; }
+      .brand-icon { width:38px; height:38px; }
+      .brand small { font-size:8px; letter-spacing:1.5px; }
+      .back-btn { padding:9px 12px; font-size:11px; }
+      main { padding-top:34px; }
+      .main-nav { gap:8px; }
+      .main-nav a { min-width:0; flex:1 1 105px; padding:10px 12px; }
+      .tree > ul { padding:16px 12px; }
+    }
+  </style>
 </head>
-<body><header class="lesson-top"><a class="lesson-brand" href="../../index.html">PHP-7019<small>THE CREATIVE CODE SPACE</small></a><a class="back-btn" href="../../index.html">← กลับหน้าหลัก</a></header>
-    <header>
-        <h1>ร้านกาแฟแมวเหมียว</h1>
-        <!-- 1. เมนูหลัก nav#main-nav -->
-        <nav id="main-nav">
-            <a href="menu.html">เมนู</a>
-            <a href="cats.html">แมวประจำร้าน</a>
-            <a href="contact.html">ติดต่อ</a>
-        </nav>
+<body>
+  <div class="wrap">
+    <header class="lesson-top">
+      <a class="brand" href="../../index.html">
+        <span class="brand-icon">&lt;/&gt;</span>
+        <span>PHP-7019<small>THE CREATIVE CODE SPACE</small></span>
+      </a>
+      <a class="back-btn" href="../../index.html">← กลับหน้าหลัก</a>
     </header>
 
     <main>
+      <section class="hero">
+        <div class="eyebrow">LESSON 02 / EXERCISE 05</div>
+        <h1>ร้านกาแฟ<span>แมวเหมียว</span></h1>
+        <nav class="main-nav" id="main-nav" aria-label="เมนูหลัก">
+          <a href="menu.html">เมนู</a>
+          <a href="cats.html">แมวประจำร้าน</a>
+          <a href="contact.html">ติดต่อ</a>
+        </nav>
+      </section>
+
+      <section class="intro-card">
         <p>กาแฟดี แมวน่ารัก เปิดทุกวัน 9 โมงถึง 6 โมงเย็น</p>
+      </section>
+
+      <section class="sitemap-card" aria-labelledby="sitemap-title">
+        <h2 class="section-heading" id="sitemap-title">แผนผังเว็บไซต์</h2>
+        <nav class="tree" id="sitemap" aria-label="แผนผังเว็บไซต์">
+          <ul>
+            <li><a href="index.html">หน้าแรก</a>
+              <ul>
+                <li><a href="menu.html">เมนู</a>
+                  <ul>
+                    <li><a href="menu.html#drinks">เครื่องดื่ม</a></li>
+                    <li><a href="menu.html#bakery">ขนม</a></li>
+                  </ul>
+                </li>
+                <li><a href="cats.html">แมวประจำร้าน</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </section>
     </main>
 
-    <footer>
-        <!-- 2. site map ทั้งต้นไม้ nav#sitemap -->
-        <nav id="sitemap">
-            <ul>
-                <li><a href="index.html">หน้าแรก</a>
-                    <ul>
-                        <li><a href="menu.html">เมนู</a>
-                            <ul>
-                                <li><a href="menu.html#drinks">เครื่องดื่ม</a></li>
-                                <li><a href="menu.html#bakery">ขนม</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="cats.html">แมวประจำร้าน</a></li>
-                        <li><a href="contact.html">ติดต่อ</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </footer>
-<footer class="lesson-footer">© 2026 PHP-7019 · <a href="../../index.html">กลับหน้ารวมบทเรียน ↑</a></footer></body>
+    <footer class="lesson-footer">© 2026 PHP-7019 · <a href="../../index.html">กลับหน้ารวมบทเรียน ↑</a></footer>
+  </div>
+</body>
 </html>
