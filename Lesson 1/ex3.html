@@ -69,7 +69,29 @@
       .table-heading { align-items:flex-start; flex-direction:column; }
       th,td { padding:13px 14px; }
     }
-  </style>
+  
+/* Shared layout refinement: balanced, centered lesson content */
+body { display:flex; flex-direction:column; align-items:center; }
+body > * { width:min(900px,100%); margin-left:auto !important; margin-right:auto !important; }
+body > .lesson-top, body > .topbar, body > .lesson-footer, body > footer { width:100%; max-width:1040px; }
+body > main { width:min(900px,100%); margin:0 auto; }
+body > h1, body > h2, body > p { text-align:center; }
+body > img { display:block; width:auto; max-width:min(100%,720px); height:auto; margin:22px auto !important; object-fit:contain; }
+body > form, body > table { width:min(760px,100%); margin:26px auto !important; text-align:left; }
+body > ul { width:min(760px,100%); margin:18px auto !important; text-align:left; }
+body > main > h1, body > main > h2, body > main > p { text-align:center; margin-left:auto; margin-right:auto; }
+body > main > img, main img { display:block; width:auto; max-width:100%; height:auto; margin:22px auto !important; object-fit:contain; }
+body > main > section, main > section { width:100%; margin:26px auto; padding:clamp(18px,3vw,30px); border:1px solid var(--line); border-radius:22px; background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025)); }
+body > header:not(.lesson-top) { text-align:center; }
+body > nav, main nav { justify-content:center; }
+body > p { line-height:1.9; }
+table { margin-left:auto !important; margin-right:auto !important; }
+@media(max-width:600px) {
+  body { padding-left:14px; padding-right:14px; }
+  body > * { max-width:100%; }
+  body > img { max-width:100%; }
+}
+</style>
 </head>
 <body>
   <header class="topbar">
