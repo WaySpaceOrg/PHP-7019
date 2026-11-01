@@ -19,6 +19,9 @@ body > p { line-height:1.9; }
 table { margin-left:auto !important; margin-right:auto !important; }
 @media(max-width:600px) { body { padding-left:14px; padding-right:14px; } body > * { max-width:100%; } body > img { max-width:100%; } }
 
+/* Explicitly suppress any stale cat image markup if the browser serves cached HTML. */
+.cat-section img { display:none !important; }
+
 /* Page-specific centered layout: keep all lesson content in one balanced column. */
 body { display:block !important; padding:0 20px 45px; }
 body > * { width:auto; }
