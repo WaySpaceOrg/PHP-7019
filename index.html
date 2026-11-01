@@ -9,6 +9,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    // Always reopen the homepage at the top when returning from a lesson page.
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', function (event) {
+      const navigation = performance.getEntriesByType('navigation')[0];
+      if (event.persisted || (navigation && navigation.type === 'back_forward')) {
+        if (window.location.hash) history.replaceState(null, '', window.location.pathname + window.location.search);
+        window.scrollTo(0, 0);
+      }
+    });
+  </script>
   <style>
     :root {
       --bg: #170d20; --panel: #211329; --panel2: #2a1832;
